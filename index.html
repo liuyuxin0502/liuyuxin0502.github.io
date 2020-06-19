@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/icon/wan.ico">
     <title>生日快乐</title>
     <style>
         * {
@@ -99,6 +100,45 @@
             width: 100%;
             border-radius: 20px;
         }
+        #birth{
+            position: fixed;
+            top: -100px;
+            color: #fb7299;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+       
+        @keyframes birth {
+            0%{
+                top: -100px;
+            }
+           
+            20%{
+                top: 200px;
+            }
+           
+            40%{
+                top: 100px;
+            }
+            
+            60%{
+                top: 200px;
+            }
+            
+            80%{
+                top: 160px;
+            }
+            88%{
+                top: 200px;
+            }
+            92%{
+                top: 180px;
+            }
+            100%{
+                top: 200px;
+            }
+
+        }
     </style>
 </head>
 
@@ -114,18 +154,21 @@
             <p>提取码: <span style="font-size: 18px;">xsaw</span></p>
             <a href="https://pan.baidu.com/s/1B2IXr3G9J0lJpHgGE64Ujw" target="_blank">传送门>>></a>
         </div>
+        <div id="birth">Happy&nbsp;birthday&nbsp;!</div>
     </div>
     <div id="photo"><img src="./imgs/43.jpg" alt=""></div>
     <script>
         var _who = document.getElementById('who');
         var _href = document.getElementById('href');
         var _photo = document.getElementById('photo');
+        var _birth = document.getElementById('birth');
         _who.oninput = function () {
             var _this = this;
             if (_this.value == '刘雨鑫') {
-                _this.blur();
                 _this.classList.add('hidden');
                 _href.classList.remove('hidden');
+                _birth.style.animation = 'birth 1s 2s forwards';
+                _this.blur();
                 setTimeout(function () {
                     _href.style.opacity = 1;
                     _photo.style.opacity = 1;
