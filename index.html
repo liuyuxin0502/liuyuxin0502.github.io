@@ -123,6 +123,7 @@
         _who.oninput = function () {
             var _this = this;
             if (_this.value == '刘雨鑫') {
+                _this.blur();
                 _this.classList.add('hidden');
                 _href.classList.remove('hidden');
                 setTimeout(function () {
