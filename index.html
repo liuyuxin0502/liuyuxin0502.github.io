@@ -139,6 +139,29 @@
             }
 
         }
+           .liuxing{
+            position: fixed;
+            top: -100px;
+            right: 0;
+            opacity: 1;
+            transition: all 3s;
+        }
+        .liuxing:after {
+            content: '';
+            display: block;
+            border: 0px solid #fff;
+            border-width: 0px 143px 4px 90px;
+            border-color: transparent transparent transparent rgba(181, 199, 255, 1);
+            transform: rotate(-21deg) translate3d(1px, 3px, 0);
+            box-shadow: 0 0 1px 0 rgba(255, 255, 255, .1);
+            transform-origin: 0% 100%;
+            animation: shooting-ani 4s 3s ease-out;
+        }
+        .liuxing[active="1"]{
+            top: 400px;
+            right: 1000px;
+            opacity: 0;
+        }
     </style>
 </head>
 
@@ -157,17 +180,20 @@
         <div id="birth">Happy&nbsp;birthday&nbsp;!</div>
     </div>
     <div id="photo"><img src="./imgs/43.jpg" alt=""></div>
+    <div class="liuxing" id="liuxing"></div>
     <script>
         var _who = document.getElementById('who');
         var _href = document.getElementById('href');
         var _photo = document.getElementById('photo');
         var _birth = document.getElementById('birth');
+        var liuxing = document.getElementById('liuxing');
         _who.oninput = function () {
             var _this = this;
             if (_this.value == '刘雨鑫') {
                 _this.classList.add('hidden');
                 _href.classList.remove('hidden');
                 _birth.style.animation = 'birth 1s 2s forwards';
+                liuxing.setAttribute('active','1');
                 _this.blur();
                 setTimeout(function () {
                     _href.style.opacity = 1;
