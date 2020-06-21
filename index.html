@@ -19,15 +19,14 @@
         }
 
         #box {
-            display: flex;
-            display: -webkit-flex;
-            align-items: center;
-            justify-content: center;
+            padding-top: 250px;
             height: 100%;
         }
 
         #search {
             position: relative;
+            margin: 0 auto;
+            width: 250px;
         }
 
         input {
@@ -86,7 +85,8 @@
             text-decoration: none;
             color: #fb7299;
         }
-        #photo{
+
+        #photo {
             position: fixed;
             top: 40px;
             left: 50%;
@@ -96,56 +96,64 @@
             opacity: 0;
             transition: opacity 3s;
         }
-        #photo img{
+
+        #photo img {
             width: 100%;
             border-radius: 20px;
         }
-        #birth{
+
+        #birth {
             position: fixed;
             top: -100px;
             color: #fb7299;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
+            font-size: 30px;
         }
-       
+
         @keyframes birth {
-            0%{
+            0% {
                 top: -100px;
             }
-           
-            20%{
+
+            20% {
                 top: 180px;
             }
-           
-            40%{
+
+            40% {
                 top: 100px;
             }
-            
-            60%{
+
+            60% {
                 top: 180px;
             }
-            
-            80%{
+
+            80% {
                 top: 140px;
             }
-            88%{
+
+            88% {
                 top: 180px;
             }
-            92%{
+
+            92% {
                 top: 160px;
             }
-            100%{
+
+            100% {
                 top: 180px;
             }
 
         }
-        .liuxing{
+
+        .liuxing {
             position: fixed;
             top: -100px;
             right: 0;
             opacity: 1;
             transition: all 4s;
         }
+
         .liuxing:after {
             content: '';
             display: block;
@@ -156,7 +164,8 @@
             box-shadow: 0 0 1px 0 rgba(255, 255, 255, .1);
             transform-origin: 0% 100%;
         }
-        .liuxing[active="1"]{
+
+        .liuxing[active="1"] {
             top: 400px;
             right: 1000px;
             opacity: 0;
@@ -170,12 +179,13 @@
             <input id="who" type="text" placeholder="今天是谁的生日？请输入">
         </div>
         <div id="href" class="hidden">
-            <p style="color:#fb7299;padding-bottom: 20px;">小刘老师，今天是你的生日，在这里送上我最真挚的祝福，真心希望我们的小刘老师每天都开开心心，忘掉那些伤心的事情。-- Mr Lee</p>
+            <p style="color:#fb7299;padding-bottom: 20px;">小刘老师，今天是你的生日，在这里送上我最真挚的祝福，真心希望我们的小刘老师每天都开开心心，生日快乐！-- Mr
+                Lee</p>
             <p>由于该文件里照片数量多且单张照片大，放到服务器上加载慢影响体验，请用电脑端到百度网盘下载静态文件体验更佳。</p>
             <p>百度网盘链接:</p>
-            <p>https://pan.baidu.com/s/1oVAuNUOOHiXvpxps4S6TBA</p>
-            <p>提取码: <span style="font-size: 18px;">ddbs</span></p>
-            <a href="https://pan.baidu.com/s/1oVAuNUOOHiXvpxps4S6TBA" target="_blank">刘雨鑫亲启（传送门）>>></a>
+            <p>https://pan.baidu.com/s/14RB3pNnmeUZnH84PFYPbkQ</p>
+            <p>提取码: <span style="font-size: 18px;">6vo9</span></p>
+            <a href="https://pan.baidu.com/s/14RB3pNnmeUZnH84PFYPbkQ" target="_blank">刘雨鑫亲启（传送门）>>></a>
         </div>
         <div id="birth">Happy&nbsp;birthday&nbsp;!</div>
     </div>
@@ -193,12 +203,12 @@
                 _this.classList.add('hidden');
                 _href.classList.remove('hidden');
                 _birth.style.animation = 'birth 1s 2s forwards';
-                liuxing.setAttribute('active','1');
+                liuxing.setAttribute('active', '1');
                 _this.blur();
                 setTimeout(function () {
                     _href.style.opacity = 1;
                     _photo.style.opacity = 1;
-                },0);
+                }, 0);
             }
         };
     </script>
